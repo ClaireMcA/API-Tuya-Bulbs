@@ -1,27 +1,34 @@
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
 import express from 'express';
 const app = express()
 const port = 3000
 
+console.log(process.env);
 import { TuyaContext  } from '@tuya/tuya-connector-nodejs';
+
+// const accessKey = process.env.
+
 
 const context = new TuyaContext({
     baseUrl: 'https://openapi.tuyaeu.com',
-    accessKey: '',
-    secretKey: '',
+    accessKey: process.env.ACCESS_KEY as string,
+    secretKey: process.env.SECRET_KEY as string,
 });
 
 const diningId = 'bf904933cd7fe73d01um4a';
 const loungeId = 'bf95ded55281d65df26rdf';
+const mattId = 'bf2fc926b7ae87152aa3nr';
 
 // app.get('/', (req, res) => {
 //   res.status(200).send(['data'])
 // })
 
 
-app.post('/dining/flicker', (req, res) => {
-    // const id = req.params.deviceId;
-    const id = diningId;
+app.post('/:deviceId/flicker', (req, res) => {
+    const id = req.params.deviceId;
+    console.log(id);
+    // const id = diningId;
         context.request({
             path: `/v1.0/iot-03/devices/${id}/commands`,
             method: 'POST',
