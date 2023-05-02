@@ -2,8 +2,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 const app = express();
-//const port = 3000
-const port = 5000;
+const port = 3000
+//const port = 5000;
 
 import { TuyaContext  } from '@tuya/tuya-connector-nodejs';
 
@@ -414,7 +414,7 @@ app.post('/:deviceId/colour/:colourVal', (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.send("Express on Vercel");
+    res.send("Tuya Bulb Custom API");
 });
 
 
