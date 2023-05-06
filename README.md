@@ -11,49 +11,64 @@ Then run the api with `npm run start`.
 
 All the endpoints that were made as part of this project can be found below:
 
-This endpoint will toggle the switch. (If the light is on, it will turn it off. If it is off, it will turn it on.)
+
 `/:deviceId`
+
+Toggles the bulb. (If the light is on, it will turn it off. If it is off, it will turn it on.)
 
 #### Off
 
-This endpoint will switch both devices off
 `/off`
 
-This endpoint switches only the selected endpoint off
+Switches both bulbs off
+
 `/:deviceId/off`
 
-#### Om
+Switches the selected bulb off
 
-This endpoint will switch both devices on
+#### On
+
 `/on`
 
-This endpoint switches only the selected endpoint on
+Switches both bulbs on
+
 `/:deviceId/on`
 
+Switches only the selected bulb on
+
 #### Flicker
-This was a fun endpoint that gets both devices to flicker twice
+
 `/flicker`
 
-This flickers the selected device twice
+Makes both bulbs to flicker twice
+
 `/:deviceId/flicker`
+
+Flickers the selected bulb twice
 
 #### Colour Temperature
 
 For colour temperature adjustments, values can be between 100 and 1000, or the keywords 'warm', 'warmwhite' or 'white'
 
-This enpoint will adjust the colour temperature of both bulbs.
+
 `/colour/:colourVal`
 
-This enpoint allows you to adjust the colour temperature of both bulbs.
+Adjusts the colour temperature of both bulbs.
+
 `/:deviceId/colour/:colourVal`
+
+Adjusts the colour temperature of the selected bulb.
 
 #### Brightness
 
 For brightness adjustments, values can be between 100 and 1000, or the keywords 'low', 'mid' or 'high'
 
-This enpoint will adjust the brightness of both bulbs.
+
 `/bright/:brightVal`
 
-This enpoint allows you to adjust the brightness of both bulbs.
+Adjusts the brightness of both bulbs.
+
 `/:deviceId/bright/:brightVal`
+
+Adjusts the brightness of the selected bulb.
 
