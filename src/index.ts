@@ -91,7 +91,7 @@ app.post('/on', (req, res) => {
 
 
 // This was a fun command that gets both devices to flicker twice
-app.post('/flickering', (req, res) => {
+app.post('/flicker', (req, res) => {
     context.request({
         path: `/v1.0/iot-03/devices/${lamp1}/commands`,
         method: 'POST',
